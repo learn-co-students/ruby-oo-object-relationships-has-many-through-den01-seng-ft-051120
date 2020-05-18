@@ -24,11 +24,7 @@ class Waiter
 
   def best_tipper
     meals.reduce do |best_tipped_meal, meal|
-      if meal.tip > best_tipped_meal.tip
-        meal
-      else
-        best_tipped_meal
-      end
+      meal.tip > best_tipped_meal.tip ? meal : best_tipped_meal
     end.customer
   end
 end
